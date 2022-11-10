@@ -23,6 +23,6 @@
   ],
   "rules": {
     "react/function-component-definition": 0,
-    "no-unused-vars": 0
+    "no-unused-vars": 1
   }
 }

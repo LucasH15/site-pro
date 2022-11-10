@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const articles = result.data.allSanityArticles.nodes || [];
 
     articles.forEach(article => {
-        const path = `/article/${article.slug}`;
+        const path = `/articles/${article.slug}`;
 
         createPage({
             path,

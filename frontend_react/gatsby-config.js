@@ -12,8 +12,8 @@ const previewEnabled = (process.env.GATSBY_IS_PREVIEW || 'false').toLowerCase() 
 
 module.exports = {
     siteMetadata: {
-        title: `.`,
-        siteUrl: `https://www.yourdomain.tld`
+        title: 'Lucas Hubert',
+        siteUrl: process.env.SITE_URL
     },
     plugins: [
         {

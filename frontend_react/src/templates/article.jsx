@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 
 const Article = ({ pageContext }) => {
     const { article } = pageContext;
+
     return (
         <div>
             Title: {article.title}
@@ -12,8 +13,12 @@ const Article = ({ pageContext }) => {
 };
 
 Article.propTypes = {
-    // eslint-disable-next-line react/forbid-prop-types
-    pageContext: propTypes.object.isRequired
+    pageContext: propTypes.shape({
+        article: propTypes.shape({
+            title: propTypes.string,
+            slug: propTypes.string
+        })
+    }).isRequired
 };
 
 export default Article;
