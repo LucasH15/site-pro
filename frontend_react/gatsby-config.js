@@ -22,7 +22,7 @@ module.exports = {
                 projectId: process.env.SANITY_PROJECT_ID,
                 dataset: process.env.SANITY_DATASET,
                 token: process.env.SANITY_TOKEN,
-                watchMode: true,
+                watchMode: !isProd, // watchMode only in dev mode
                 overlayDrafts: !isProd || previewEnabled // drafts in dev & Gatsby Cloud Preview
             }
         },
