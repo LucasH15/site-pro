@@ -8,7 +8,6 @@ const path = require('path');
 // gatsby/src/utils/eslint-rules
 const gatsbyRequiredRules = path.join(process.cwd(), 'node_modules', 'gatsby', 'dist', 'utils', 'eslint-rules');
 const isProd = process.env.NODE_ENV === 'production';
-const previewEnabled = (process.env.GATSBY_IS_PREVIEW || 'false').toLowerCase() === 'true';
 
 module.exports = {
     siteMetadata: {
@@ -21,9 +20,9 @@ module.exports = {
             options: {
                 projectId: process.env.SANITY_PROJECT_ID,
                 dataset: process.env.SANITY_DATASET,
-                ...(process.env.SANITY_TOKEN ? { token: process.env.SANITY_TOKEN } : {}),
+                token: process.env.SANITY_TOKEN,
                 watchMode: true,
-                overlayDrafts: !isProd || previewEnabled // drafts in dev & Gatsby Cloud Preview
+                overlayDrafts: !isProd // drafts in dev
             }
         },
         'gatsby-plugin-image',
