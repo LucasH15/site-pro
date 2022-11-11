@@ -1,17 +1,20 @@
-import { Button, Typography } from '@mui/material';
-import Link from 'next/link';
+import * as React from 'react';
+import { Link } from 'gatsby';
+import { Button } from '@mui/material';
 
-import { Layout } from '../components';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
 
-const Index = () => {
+const IndexPage = () => {
     return (
         <Layout>
-            <Typography variant="h1">HELLO</Typography>
-            <Button variant="contained" component={Link} href="/articles">
+            <Button component={Link} variant="contained" to="/articles">
                 Articles
             </Button>
         </Layout>
     );
 };
 
-export default Index;
+export default IndexPage;
+
+export const Head = () => <Seo title="Accueil" />;

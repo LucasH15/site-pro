@@ -1,14 +1,19 @@
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import propTypes from 'prop-types';
 import { ThemeProvider } from '@mui/material';
 
 import theme from '../theme';
 
 const Layout = ({ children }) => {
-    return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+    return (
+        <ThemeProvider theme={theme}>
+            <main>{children}</main>
+        </ThemeProvider>
+    );
 };
 
 Layout.propTypes = {
-    children: PropTypes.node.isRequired
+    children: propTypes.node.isRequired
 };
 
 export default Layout;
