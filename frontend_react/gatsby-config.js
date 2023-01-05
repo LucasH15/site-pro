@@ -21,7 +21,7 @@ module.exports = {
                 projectId: process.env.SANITY_PROJECT_ID,
                 dataset: process.env.SANITY_DATASET,
                 token: process.env.SANITY_TOKEN,
-                watchMode: true,
+                watchMode: !isProd, // watchMode in dev
                 overlayDrafts: !isProd // drafts in dev
             }
         },
@@ -34,7 +34,7 @@ module.exports = {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'images',
-                path: './src/images/'
+                path: './src/assets/images/'
             },
             __key: 'images'
         },
@@ -45,6 +45,19 @@ module.exports = {
                 stages: ['develop'],
                 extensions: ['js', 'jsx', 'ts', 'tsx'],
                 exclude: ['node_modules', 'bower_components', '.cache', 'public']
+            }
+        },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: 'Lucas Hubert',
+                short_name: 'LH',
+                start_url: '/',
+                background_color: '#252D3B',
+                theme_color: '#FB4D3D',
+                display: 'standalone',
+                lang: 'fr',
+                icon: 'src/assets/images/favicon.svg'
             }
         }
     ]
